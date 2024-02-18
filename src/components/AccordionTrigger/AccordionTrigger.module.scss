@@ -1,0 +1,9 @@
+.AccordionHeader {
+  display: flex;
+  padding: 1rem;
+}
+
+button[data-state="open"] > .AccordionChevron {
+  transform: rotate(180deg);
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}

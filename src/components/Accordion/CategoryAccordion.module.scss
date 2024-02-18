@@ -1,0 +1,78 @@
+.AccordionRoot {
+  border-radius: 6px;
+  width: 80vw;
+}
+
+.AccordionItem {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid black;
+  &:last-child {
+    border-bottom: 1px solid black;
+    border-width: 80%;
+  }
+}
+
+.AccordionTrigger {
+  border: none;
+  font-family: inherit;
+  background-color: transparent;
+  padding: 1rem;
+  height: 40px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  background-color: white;
+}
+
+.AccordionTrigger:hover {
+  background-color: rgb(254, 238, 115);
+  transition: 0.4s ease-out;
+}
+
+.AccordionContent {
+  overflow: scroll;
+  max-height: 500px;
+  font-size: 15px;
+  color: black;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.AccordionContent[data-state="open"] {
+  animation: slideDown 400ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+.AccordionContent[data-state="closed"] {
+  animation: slideUp 400ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.AccordionTrigger[data-state="open"] > .AccordionChevron {
+  transform: rotate(180deg);
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.example::-webkit-scrollbar {
+  display: none;
+}
