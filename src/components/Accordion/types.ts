@@ -3,6 +3,7 @@ import { PropsWithChildren, ReactNode } from "react";
 export type CategoryAccordionProps = {
   children?: ReactNode;
   triggerChild?: ReactNode;
+  categories: Categories;
 };
 
 export type AccordionTriggerProps = {
