@@ -22,7 +22,7 @@ const ArticleLink: FC<ArticleLinkProps> = ({
 
   return (
     <div className={styles.wrapper}>
-      <div>
+      <div className={styles.content}>
         <Link className={styles.title} href={href}>
           {title}
         </Link>
@@ -30,7 +30,11 @@ const ArticleLink: FC<ArticleLinkProps> = ({
 
         <button className={styles.button} onClick={handleClick}>
           Read more
-          <DoubleArrowRightIcon width={25} height={25} />
+          <DoubleArrowRightIcon
+            className={styles.icon}
+            width={25}
+            height={25}
+          />
         </button>
       </div>
       <Image
