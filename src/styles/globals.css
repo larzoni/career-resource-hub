@@ -22,7 +22,33 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--oswald-font-family);
   text-transform: uppercase;
+}
+
+h1 span {
+  color: yellow;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.153);
+}
+
+h3 {
+  padding: 1rem 0rem;
+  font-family: var(--oswald-font-family);
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
 }

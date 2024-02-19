@@ -39,7 +39,7 @@
 
 .AccordionContent {
   overflow: scroll;
-  max-height: 500px;
+  max-height: 400px;
 
   &::-webkit-scrollbar {
     display: none;
@@ -68,5 +68,11 @@
   }
   to {
     height: 0;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .AccordionRoot {
+    width: 60vw;
   }
 }
