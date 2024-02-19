@@ -3,12 +3,24 @@ import { useRouter } from "next/router";
 import ArticleLayout from "@/components/ArticleLayout/ArticleLayout";
 import Image from "next/image";
 import styles from "./ArticlePage.module.scss";
-import { Article } from "./types";
 
 const reversedCategoryLabels: { [key: string]: string } = {
   "legal-advice": "9aa72a2f-04ae-48df-b71f-25f53044dc20",
   "finding-your-audience": "9aa72a2f-04ae-48df-b71f-25f53044dc10",
   marketing: "9aa72a2f-04ae-48df-b71f-25f53044dc97",
+};
+
+type Article = {
+  story: {
+    id: number;
+    slug: string;
+    content: {
+      title: string;
+      image: string;
+      categories: string[];
+      content: string;
+    };
+  };
 };
 
 const ArticlePage = () => {
