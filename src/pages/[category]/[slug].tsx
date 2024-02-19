@@ -1,12 +1,17 @@
+import ArticleLayout from "@/components/ArticleLayout/ArticleLayout";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import styles from "./ArticlePage.module.scss";
 
-interface Article {
+type Article = {
   story: {
     id: number;
     uuid: string;
     slug: string;
     fullSlug: string;
+    publishedAt: string;
+    firstPublishedAt: string;
     content: {
       title: string;
       description: string;
@@ -15,7 +20,7 @@ interface Article {
       content: string;
     };
   };
-}
+};
 
 const reversedCategoryLabels: { [key: string]: string } = {
   "legal-advice": "9aa72a2f-04ae-48df-b71f-25f53044dc20",
@@ -62,14 +67,24 @@ const ArticlePage = () => {
   }
 
   return (
-    <div>
-      {articles.map((article) => (
-        <div key={article.story.id}>
-          <h1>{article.story.content.title}</h1>
-          <p>{article.story.content.content}</p>
-        </div>
-      ))}
-    </div>
+    <ArticleLayout>
+      <div className={styles.wrapper}>
+        {articles.map((article) => (
+          <div key={article.story.id}>
+            <h1 className={styles.title}>{article.story.content.title}</h1>
+
+            <Image
+              className={styles.image}
+              width={1000}
+              height={500}
+              alt="image"
+              src={article.story.content.image}
+            />
+            <p className={styles.content}>{article.story.content.content}</p>
+          </div>
+        ))}
+      </div>
+    </ArticleLayout>
   );
 };
 
