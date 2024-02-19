@@ -6,8 +6,6 @@ This is the web portal to my Career Resource Hub.
 
 The project is built using Next.js Page Router and Typescript.
 
-- [Deployed on Vercel](https://career-resource-hub-tbps.vercel.app/)
-
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/) - JavaScript runtime – version (see `package.json`)
@@ -37,3 +35,7 @@ The project is built using Next.js Page Router and Typescript.
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+
+## Deployed on Vercel
+
+[Career Resource Hub on Vercel](https://career-resource-hub-tbps.vercel.app/)
