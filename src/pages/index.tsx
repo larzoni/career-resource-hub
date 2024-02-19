@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import CategoryAccordion from "@/components/Accordion/CategoryAccordion";
+import VideoPlaylist from "@/components/VideoPlaylist/VideoPlaylist";
+import { CategoryProvider } from "@/context/CategoryContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +19,13 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <h1>Career Resource Hub</h1>
+        <CategoryProvider>
+          <div className={styles.subTitle}>Articles </div>
+          <CategoryAccordion />
 
-        <div className={styles.subTitle}>Articles </div>
-        <CategoryAccordion />
-
-        <div className={styles.subTitle}>Videos</div>
+          <div className={styles.subTitle}>Videos</div>
+          <VideoPlaylist category="marketing" />
+        </CategoryProvider>
       </main>
     </>
   );
