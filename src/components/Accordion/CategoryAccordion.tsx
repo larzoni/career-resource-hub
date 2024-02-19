@@ -11,9 +11,11 @@ import styles from "./CategoryAccordion.module.scss";
 import { AccordionTrigger } from "../AccordionTrigger/AccordionTrigger";
 import { AccordionContent } from "../AccordionContent/AccordionContent";
 import { ArticleLink } from "../ArticleLink/ArticleLink";
+import { useActiveCategory } from "@/context/CategoryContext";
 
 const CategoryAccordion: FC<CategoryAccordionProps> = () => {
   const [categories, setCategories] = useState<Categories>({});
+  const { setActiveCategory } = useActiveCategory();
 
   useEffect(() => {
     fetch("/json/apiResponse.json")
@@ -35,6 +37,11 @@ const CategoryAccordion: FC<CategoryAccordionProps> = () => {
     }, {} as Categories);
   };
 
+  const handleCategoryClick = (categoryLabel: string) => {
+    const categorySlug = categoryLabel.replace(/\s+/g, "-").toLowerCase();
+    setActiveCategory(categorySlug);
+  };
+
   return (
     <div>
       <Accordion.Root
@@ -47,6 +54,7 @@ const CategoryAccordion: FC<CategoryAccordionProps> = () => {
             key={category}
             className={styles.AccordionItem}
             value={`item-${category}`}
+            onClick={() => handleCategoryClick(categoryLabels[category])}
           >
             <Accordion.Trigger asChild>
               <AccordionTrigger className={styles.AccordionTrigger}>
