@@ -1,6 +1,8 @@
 .AccordionHeader {
   display: flex;
-  padding: 1rem;
+  padding: 1rem 0rem 0rem 0rem;
+  font-family: var(--oswald-font-family);
+  text-transform: uppercase;
 }
 
 button[data-state="open"] > .AccordionChevron {

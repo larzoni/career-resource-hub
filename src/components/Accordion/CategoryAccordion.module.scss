@@ -16,7 +16,10 @@
 
 .AccordionTrigger {
   border: none;
-  font-family: inherit;
+  font-family: var(--oswald-font-family);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 200;
   background-color: transparent;
   padding: 1rem;
   height: 40px;
@@ -37,13 +40,12 @@
 .AccordionContent {
   overflow: scroll;
   max-height: 500px;
-  font-size: 15px;
-  color: black;
 
   &::-webkit-scrollbar {
     display: none;
   }
 }
+
 .AccordionContent[data-state="open"] {
   animation: slideDown 400ms cubic-bezier(0.87, 0, 0.13, 1);
 }
@@ -67,8 +69,4 @@
   to {
     height: 0;
   }
-}
-
-.example::-webkit-scrollbar {
-  display: none;
 }

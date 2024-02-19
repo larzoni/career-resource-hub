@@ -4,7 +4,7 @@
   justify-content: space-between;
   margin: 1.5rem;
   gap: 5rem;
-  background-color: #f2f2f0;
+  background-color: #ffffff;
   border-radius: 1rem;
   padding: 2rem 4rem;
 }
@@ -13,7 +13,8 @@
   border-radius: 1rem;
   width: 60%;
   max-width: 50%;
-  height: auto;
+  max-height: 400px;
+  height: 40%;
   object-fit: cover;
 }
 
@@ -51,4 +52,39 @@
     color: blue;
     gap: 1rem;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 2rem 2rem;
+    gap: 1rem;
+  }
+
+  .button {
+    margin-top: 1rem;
+  }
+
+  .thumbnail {
+    width: 100%;
+    max-width: 100%;
+  }
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .button  {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+@media only screen and (min-width: 1025px) {
 }
