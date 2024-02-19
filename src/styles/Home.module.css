@@ -8,5 +8,8 @@
 
 .subTitle {
   padding: 1.5rem;
+  font-family: var(--oswald-font-family);
+  text-transform: uppercase;
+  font-weight: 200;
   font-size: 20px;
 }

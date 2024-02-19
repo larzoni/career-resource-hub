@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+:root {
+  --oswald-font-family: "Oswald", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,4 +14,15 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: rgb(227, 227, 227);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+h1,
+h2 {
+  font-family: var(--oswald-font-family);
+  text-transform: uppercase;
 }
