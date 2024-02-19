@@ -13,29 +13,8 @@ import { AccordionContent } from "../AccordionContent/AccordionContent";
 import { ArticleLink } from "../ArticleLink/ArticleLink";
 import { useActiveCategory } from "@/context/CategoryContext";
 
-const CategoryAccordion: FC<CategoryAccordionProps> = () => {
-  const [categories, setCategories] = useState<Categories>({});
+const CategoryAccordion: FC<CategoryAccordionProps> = ({ categories }) => {
   const { setActiveCategory } = useActiveCategory();
-
-  useEffect(() => {
-    fetch("/json/apiResponse.json")
-      .then((response) => response.json())
-      .then((data: Story[]) => {
-        const groupedCategories = groupByCategory(data);
-        setCategories(groupedCategories);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
-  const groupByCategory = (data: Story[]): Categories => {
-    return data.reduce((acc, story) => {
-      story.story.content.categories.forEach((category) => {
-        acc[category] = acc[category] || [];
-        acc[category].push(story);
-      });
-      return acc;
-    }, {} as Categories);
-  };
 
   const handleCategoryClick = (categoryLabel: string) => {
     const categorySlug = categoryLabel.replace(/\s+/g, "-").toLowerCase();
